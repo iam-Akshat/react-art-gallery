@@ -6,7 +6,7 @@ const artReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_DATA':
       return {
-        artworks: [...action.payload],
+        artworks: [...state.artworks, ...action.payload],
       };
 
     default:

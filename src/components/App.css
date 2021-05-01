@@ -1,1 +1,6 @@
-
+.book_preview{
+    width: 200px;
+}
+.art_grid ul{
+    list-style: none;
+}

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ArtPreview from '../components/ArtPreview';
 import useArtWorks from '../hooks/useArtworks';
 import Filter from '../components/Filter';
+import Loader from '../components/Loader';
 
 const ArtGrid = () => {
   const data = useSelector((state) => state.art.artworks);
@@ -27,7 +28,7 @@ const ArtGrid = () => {
     ));
   }
   return (
-    loading ? <div className="text-center">Fancy loading.....</div> : (
+    loading ? <Loader /> : (
       <div>
         <Filter handleChange={setFilter} curVal={filter} />
         <Masonry className="art_grid mx-auto container" elementType="ul">

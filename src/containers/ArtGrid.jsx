@@ -1,12 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { useSelector } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Masonry from 'react-masonry-component';
 import ArtPreview from '../components/ArtPreview';
 import useArtWorks from '../hooks/useArtworks';
 
@@ -25,13 +19,9 @@ const ArtGrid = () => {
   }
   return (
     loading ? 'loading.....' : (
-      <div className="art_grid">
-
-        <ul>
-          { artPreviews }
-        </ul>
-
-      </div>
+      <Masonry className="art_grid mx-auto container" elementType="ul">
+        { artPreviews }
+      </Masonry>
     )
   );
 };

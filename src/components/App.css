@@ -1,6 +1,7 @@
 .book_preview{
     width: 200px;
+    margin: 0.5rem 0.5rem;
 }
-.art_grid ul{
+ul.art_grid{
     list-style: none;
 }

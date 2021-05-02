@@ -11,7 +11,7 @@ const Filter = ({ handleChange, curVal }) => {
   const options = filters.map((category) => <option key={Math.random()} value={category}>{category}</option>);
   return (
     <div className="container">
-      <h5 className> Filter </h5>
+      <h5> Filter </h5>
       <select
         value={curVal}
         onChange={(e) => { handleChange(e.target.value); }}

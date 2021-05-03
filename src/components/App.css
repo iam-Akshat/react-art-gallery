@@ -1,7 +1,8 @@
-.book_preview{
-    width: 200px;
-    margin: 0.5rem 0.5rem;
+.book_preview {
+  width: 200px;
+  margin: 0.5rem 0.5rem;
 }
-ul.art_grid{
-    list-style: none;
+
+ul.art_grid {
+  list-style: none;
 }

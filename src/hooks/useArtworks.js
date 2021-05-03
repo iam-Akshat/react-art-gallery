@@ -13,9 +13,9 @@ const useArtWorks = () => {
   const dispatch = useDispatch();
   useEffect(async () => {
     if (shouldFetchData) {
-      const data1 = fetchArt();
-      const data2 = fetchArt(8);
-      const data3 = fetchArt(20);
+      const data1 = fetchArt(100);
+      const data2 = fetchArt(69);
+      const data3 = fetchArt(21);
 
       dispatch(ADD_DATA(await data1));
       dispatch(ADD_DATA(await data2));

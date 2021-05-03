@@ -1,4 +1,4 @@
-# Art Gallery 
+# Art Gallery, Catalogue of Art
 
 An art gallery made with react and redux. You can filter components by category
 which are dynamically populated from api. Like an a particular one ? click on 
@@ -27,7 +27,7 @@ it to see its full details and even share with friends.
 
 ## Deployment
  This is uploaded on Netlify. Check out Netlify for how to deploy your own version.
- 
+
 ## Testing
 Uses default create-react-app testing libraries
 - redux-mock-store for mocking store

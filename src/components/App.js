@@ -15,6 +15,11 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
+            <h1 className="text-center">
+              {' '}
+              Art Gallery
+              <span role="img" aria-label="pallete">🎨</span>
+            </h1>
             <ArtGrid />
           </Route>
           <Route path="/artwork/:id">

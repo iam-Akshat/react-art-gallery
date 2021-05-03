@@ -1,11 +1,26 @@
 /* eslint-disable camelcase */
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import fetchArtById from '../api/fetchArtById';
 import BackNav from './BackNav';
+import Loader from './Loader';
 
 const ArtDetail = () => {
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(true);
   const artwork = useSelector((state) => state.art.artworks.filter((art) => art.id === +id));
+  useEffect(async () => {
+    if (artwork[0]) {
+      setData(artwork[0]);
+      setLoading(false);
+      return;
+    }
+    const work = await fetchArtById(id);
+    setData(work);
+    setLoading(false);
+  }, []);
   const {
     title,
     date_display,
@@ -15,8 +30,9 @@ const ArtDetail = () => {
     credit_line,
     category_titles,
     image_id,
-  } = artwork[0];
+  } = data;
   const imgSrc = `https://www.artic.edu/iiif/2/${image_id}/full/863,/0/default.jpg`;
+  if (loading) return <Loader />;
   return (
     <>
       <BackNav />
@@ -58,7 +74,7 @@ const ArtDetail = () => {
               </tr>
               <tr>
                 <th scope="row">Categories</th>
-                <td colSpan="2">{category_titles.join(',')}</td>
+                <td colSpan="2">{(category_titles || []).join(',')}</td>
               </tr>
             </tbody>
           </table>

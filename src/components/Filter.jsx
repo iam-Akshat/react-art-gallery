@@ -18,7 +18,7 @@ const Filter = ({ handleChange, curVal }) => {
         className="form-select w-25  mt-1"
         aria-label="Filter by category"
       >
-        <option value="" selected>All</option>
+        <option value="">All</option>
         {options}
       </select>
     </div>

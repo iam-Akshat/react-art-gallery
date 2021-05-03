@@ -26,11 +26,8 @@ it to see its full details and even share with friends.
 - Run `npm start`
 
 ## Deployment
- This is uploaded on Netlify but here are instructions for heroku.
-- heroku create $APP_NAME --buildpack mars/create-react-app
-- git push heroku master
-- heroku open
-
+ This is uploaded on Netlify. Check out Netlify for how to deploy your own version.
+ 
 ## Testing
 Uses default create-react-app testing libraries
 - redux-mock-store for mocking store

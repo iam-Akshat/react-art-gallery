@@ -1,13 +1,10 @@
+/* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 const Filter = ({ handleChange, curVal }) => {
-  // for readability
-  // eslint-disable-next-line arrow-body-style
-  const filters = useSelector((state) => {
-    return [...new Set(state.art.artworks.map((artwork) => artwork.category_titles).flat())];
-  });
-  // eslint-disable-next-line max-len
+  const allCategories = useSelector((state) => state.art.artworks.map((artwork) => artwork.category_titles));
+  const filters = [...new Set(allCategories.flat())];
   const options = filters.map((category) => <option key={Math.random()} value={category}>{category}</option>);
   return (
     <div className="container">
